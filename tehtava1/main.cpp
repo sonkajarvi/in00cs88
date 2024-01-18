@@ -5,7 +5,7 @@
 int game(int max)
 {
     std::srand(std::time(nullptr));
-    int number = std::rand() % (max + 1);
+    int number = std::rand() % max + 1;
 
     int guess = 0;
     int tries = 0;

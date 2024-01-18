@@ -8,7 +8,7 @@ Game::Game(int max)
     : max(max)
 {
     std::srand(std::time(nullptr));
-    number = std::rand() % (max + 1);
+    number = std::rand() % max + 1;
     guess = 0;
     tries = 0;
 
