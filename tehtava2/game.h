@@ -12,8 +12,8 @@ public:
 private:
     void printGameResult() const;
 
-    int max;
-    int number;
-    int guess;
-    int tries;
+    int maxNumber;
+    int randomNumber;
+    int playerGuess;
+    int numOfGuesses;
 };

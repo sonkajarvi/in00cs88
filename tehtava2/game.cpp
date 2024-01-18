@@ -4,13 +4,13 @@
 #include <ctime>
 
 
-Game::Game(int max)
-    : max(max)
+Game::Game(int maxNumber)
+    : maxNumber(maxNumber)
 {
     std::srand(std::time(nullptr));
-    number = std::rand() % max + 1;
-    guess = 0;
-    tries = 0;
+    randomNumber = std::rand() % maxNumber + 1;
+    playerGuess = 0;
+    numOfGuesses = 0;
 
     std::cout << "GAME CONSTRUCTOR: object initialized with 10 as a maximum value" << std::endl;
 }
@@ -24,20 +24,20 @@ Game::~Game()
 void Game::play()
 {
     do {
-        std::cout << "Give your guess between 1-" << max << std::endl;
-        std::cin >> guess;
+        std::cout << "Give your guess between 1-" << maxNumber << std::endl;
+        std::cin >> playerGuess;
 
-        if (guess < number) std::cout << "Your guess is too small" << std::endl;
-        else if (guess > number) std::cout << "Your guess is too big" << std::endl;
-        tries++;
-    } while (guess != number);
+        if (playerGuess < randomNumber) std::cout << "Your guess is too small" << std::endl;
+        else if (playerGuess > randomNumber) std::cout << "Your guess is too big" << std::endl;
+        numOfGuesses++;
+    } while (playerGuess != randomNumber);
 
-    std::cout << "Your guess is right = " << guess << std::endl;
+    std::cout << "Your guess is right = " << playerGuess << std::endl;
     printGameResult();
 }
 
 
 void Game::printGameResult() const
 {
-    std::cout << "Your guessed the right answer = " << guess << " with " << tries << " guesses" << std::endl;
+    std::cout << "Your guessed the right answer = " << playerGuess << " with " << numOfGuesses << " guesses" << std::endl;
 }

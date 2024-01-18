@@ -11,7 +11,7 @@ int game(int max)
     int tries = 0;
 
     do {
-        std::cout << "arvaa luku (0-" << max << "):";
+        std::cout << "arvaa luku (1-" << max << "):";
         std::cin >> guess;
 
         if (guess < number) std::cout << "luku on suurempi" << std::endl;
